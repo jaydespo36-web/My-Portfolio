@@ -1,0 +1,504 @@
+:root {
+    --color-background: #0F172A;
+    --color-foreground: #38BDF8;
+    --color-text: #FFFFFF;
+}
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-background);
+    color: var(--color-text);
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(15,23,42,.95);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+    border-bottom:1px solid rgba(56,189,248,.15);
+}
+
+/* LOGO */
+.logo{
+    font-size:1.6rem;
+    font-weight:700;
+    color:var(--color-foreground);
+}
+
+/* HAMBURGER ICON */
+.hamburger{
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+    display:none;
+}
+
+/* SIDEBAR MENU */
+/* .sidebar{
+    position:fixed;
+    top:0;
+    right:-260px;
+    width:260px;
+    height:100vh;
+    background:#0F172A;
+    display:flex;
+    flex-direction:column;
+    padding:70px 25px;
+    gap:20px;
+    transition:0.3s ease;
+    z-index:2000;
+    border-left:1px solid rgba(56,189,248,.2);
+} */
+
+.sidebar{
+    display:flex;
+    gap:30px;
+    align-items:center;
+}
+
+.sidebar a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+/* OPEN STATE */
+.sidebar.active{
+    right:0;
+}
+
+/* SIDEBAR LINKS */
+/* .sidebar a{
+    text-decoration:none;
+    color:white;
+    font-size:18px;
+    transition:0.3s;
+} */
+
+.sidebar a:hover{
+    color:var(--color-foreground);
+} 
+/* CLOSE BUTTON */
+/* .close-btn{
+    position:absolute;
+    top:15px;
+    right:15px;
+    font-size:30px;
+    color:white;
+    cursor:pointer;
+}  */
+ .close-btn{
+    display:none;
+}
+.hamburger{
+    display:none;
+}
+
+/* MOBILE SHOW HAMBURGER */
+@media(max-width:768px){
+    @media(max-width:768px){
+
+    .hamburger{
+        display:block;
+        font-size:28px;
+        color:white;
+        cursor:pointer;
+    }
+
+    .sidebar{
+        position:fixed;
+        top:0;
+        right:-260px;
+        width:260px;
+        height:100vh;
+        background:#0F172A;
+        flex-direction:column;
+        align-items:flex-start;
+        padding:70px 25px;
+        gap:20px;
+        transition:.3s;
+        border-left:1px solid rgba(56,189,248,.2);
+    }
+
+    .sidebar.active{
+        right:0;
+    }
+
+    .close-btn{
+        display:block;
+        position:absolute;
+        top:15px;
+        right:15px;
+        font-size:30px;
+        cursor:pointer;
+    }
+}
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 80px 5%;
+}
+
+.section-title {
+    text-align: center;
+    color: var(--color-foreground);
+    margin-bottom: 50px;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+
+    background: rgba(255, 255, 255, .03);
+    border: 1px solid rgba(56, 189, 248, .15);
+    padding: 60px;
+    border-radius: 25px;
+    backdrop-filter: blur(15px);
+}
+
+.intro {
+    color: #94A3B8;
+    margin-bottom: 10px;
+}
+
+.hero-left h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 10px;
+}
+
+.hero-left h2 {
+    color: var(--color-foreground);
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #CBD5E1;
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+/* BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 14px 28px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.primary {
+    background: var(--color-foreground);
+    color: #0F172A;
+}
+
+.primary:hover {
+    transform: translateY(-3px);
+}
+
+.secondary {
+    border: 2px solid var(--color-foreground);
+    color: var(--color-foreground);
+}
+
+.secondary:hover {
+    background: var(--color-foreground);
+    color: #0F172A;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.stats div {
+    background: #1E293B;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    min-width: 120px;
+}
+
+.stats h3 {
+    color: var(--color-foreground);
+}
+
+/* HERO IMAGE */
+.hero-right {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-circle {
+    width: min(100%, 450px);
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background: #1E293B;
+    overflow: hidden;
+    border: 4px solid rgba(56, 189, 248, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-content {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: #1E293B;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.placeholder {
+    height: 220px;
+    background: linear-gradient(135deg, #334155, #475569);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-foreground);
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    color: var(--color-foreground);
+    margin-bottom: 10px;
+}
+
+/* =========================
+   CERTIFICATES
+========================= */
+
+.certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.certificate {
+    background: #1E293B;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.certificate:hover {
+    transform: translateY(-8px);
+}
+
+.certificate img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    margin: 15px 0;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid rgba(56, 189, 248, .15);
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+.lightbox img {
+    width: 80%;
+    max-width: 1000px;
+    max-height: 80vh;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .description {
+        margin: auto;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+
+    .stats div {
+        flex: 1 1 120px;
+    }
+
+    .profile-circle {
+        width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    section {
+        padding: 70px 20px;
+    }
+
+    nav {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .profile-circle {
+        width: 220px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+}
