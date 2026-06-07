@@ -78,3 +78,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+const text = "Bachelor of Science in Information Systems Student";
+
+const typingElement = document.getElementById("typing");
+
+let index = 0;
+let deleting = false;
+
+function typeEffect(){
+
+    if(!deleting){
+
+        typingElement.textContent =
+        text.substring(0, index++);
+
+        if(index > text.length){
+
+            deleting = true;
+
+            setTimeout(typeEffect, 2000);
+
+            return;
+        }
+
+    }else{
+
+        typingElement.textContent =
+        text.substring(0, index--);
+
+        if(index < 0){
+
+            deleting = false;
+        }
+    }
+
+    setTimeout(typeEffect, deleting ? 40 : 90);
+}
+
+typeEffect();
