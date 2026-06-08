@@ -9,7 +9,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <link rel="stylesheet" href="style.css">
 </head>
 
+<div id="videoModal" class="video-modal">
+    <span class="close-modal">&times;</span>
 
+    <video id="modalVideo" controls autoplay>
+        Your browser does not support the video tag.
+    </video>
+</div>
 <body>
 <div class="lightbox" id="lightbox">
     <span class="close" id="closeLightbox">&times;</span>
@@ -67,21 +73,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
             </div>
 
             <div class="stats">
-                <div>
-                    <h3>3</h3>
-                    <p>Projects</p>
-                </div>
 
-                <div>
-                    <h3>2</h3>
-                    <p>Certificates</p>
-                </div>
+    <a href="#projects" class="stat-box">
+        <h3>8</h3>
+        <p>Projects</p>
+    </a>
 
-                <div>
-                    <h3>1</h3>
-                    <p>Years Learning</p>
-                </div>
-            </div>
+    <a href="#certificate" class="stat-box">
+        <h3>7</h3>
+        <p>Certificates</p>
+    </a>
+
+    <div class="stat-box">
+        <h3>4</h3>
+        <p>Years Learning</p>
+    </div>
+
+</div>
 
         </div>
 
@@ -327,38 +335,185 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <div class="grid">
 
+        <!-- Project 1 -->
         <div class="card">
-            <img src="image/project2.png" alt="Project 1">
-            <div class="card-content">
-                <h3>POS and Inventory Management System</h3>
-                <p>A desktop-based Point of Sale and Inventory 
-                    Management System designed to efficiently track sales, 
-                    manage stock levels, and generate transaction records 
-                    for local business operations.</p>
-            </div>
-        </div>
+            <img src="image/project1.png" alt="Web Ordering System">
 
-        <div class="card">
-            <img src="image/project1.png" alt="Project 2">
             <div class="card-content">
                 <h3>Web Based Ordering System</h3>
-                <p>A web-based ordering system that allows users to browse products,
-                     place orders, and manage transactions through a simple and 
-                     user-friendly interface designed for online food/business ordering.</p>
+
+                <!-- <p>
+                    A web-based ordering system that allows users to browse
+                    products, place orders, and manage transactions through
+                    a simple and user-friendly interface designed for online
+                    food/business ordering.
+                </p> -->
+
+                <button class="view-btn"
+                    onclick="openProject('https://petrepublik.shop/')">
+                    View Project
+                </button>
             </div>
         </div>
 
         <div class="card">
-            <img src="image/project3.png" alt="Project 3">
+            <img src="image/entreppromotionalweb.png" alt="Tracking System">
+
+            <div class="card-content">
+                <h3>Promotional Website</h3>
+
+                <!-- <p>
+                    Wellness Teleconsult Application is dedicated to empowering individuals on their mental 
+                    health journey. With a focus on compassion and innovation, we aim to foster resilience and 
+                    understanding, building a healthier and more inclusive future for all.
+                </p> -->
+                <button class="view-btn"
+                    onclick="openProject('https://wellnessteleconsultapp.framer.website/?fbclid=IwY2xjawSTUKdleHRuA2FlbQIxMQBzcnRjBmFwcF9pZAEwAAEeo2SmeFW7K7BgCJFvKSgXguCoanBTbcpC0aP1ct_quLiy9UyV2ppfsIj9LPI_aem_clH2IcFBm18TrBg6_8-9eQ')">
+                    View Project
+                </button>
+            </div>
+        </div>
+        
+         <div class="card">
+            <img src="image/promotionalweb.png" alt="Tracking System">
+
             <div class="card-content">
                 <h3>Tracking System</h3>
-                <p>A frontend tracking system interface focused on organizing and 
-                    monitoring data visually, featuring a clean dashboard layout 
-                    for easier navigation and better user experience.</p>
+
+                <!-- <p>
+                    A frontend tracking system interface focused on organizing
+                    and monitoring data visually, featuring a clean dashboard
+                    layout for easier navigation and better user experience.
+                </p> -->
+
+                <button class="view-btn"
+                    onclick="openProject('projects/promotional/TropicalPathway/index.html')">
+                    View Project
+                </button>
             </div>
         </div>
 
+        <div class="card">
+            <img src="image/sflix.png" alt="Tracking System">
+
+            <div class="card-content">
+                <h3>Tracking System</h3>
+
+                <!-- <p>
+                    A frontend tracking system interface focused on organizing
+                    and monitoring data visually, featuring a clean dashboard
+                    layout for easier navigation and better user experience.
+                </p> -->
+
+                <button class="view-btn"
+                    onclick="openProject('projects/sflix/SFLix.html')">
+                    View Project
+                </button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="image/project2.png" alt="POS System">
+
+            <div class="card-content">
+                <h3>POS and Inventory Management System</h3>
+
+                <!-- <p>
+                    A desktop-based Point of Sale and Inventory
+                    Management System designed to efficiently track sales,
+                    manage stock levels, and generate transaction records
+                    for local business operations.
+                </p> -->
+
+                <button class="view-btn"
+                    onclick="openProject('#projects')">
+                    View Project
+                </button>
+            </div>
+        </div>
+
+        <!-- Project 2 -->
+
+
+        <!-- Project 3 -->
+        <div class="card">
+            <img src="image/project3.png" alt="Tracking System">
+
+            <div class="card-content">
+                <h3>Tracking System</h3>
+<!-- 
+                <p>
+                    A frontend tracking system interface focused on organizing
+                    and monitoring data visually, featuring a clean dashboard
+                    layout for easier navigation and better user experience.
+                </p> -->
+
+                <button class="view-btn"
+                    onclick="openProject('projects/tracking-system/index.html')">
+                    View Project
+                </button>
+            </div>
+        </div>
+        
     </div>
+
+<h3 class="videoss">Videos</h3>
+
+
+<div class="gridd">
+
+    <div class="cardd"
+        onclick="window.open('image/Mindwell_Telehealth_Support (3).mp4', '_blank')">
+
+        <video
+            class="project-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto">
+
+            <source src="image/Mindwell_Telehealth_Support (3).mp4" type="video/mp4">
+        </video>
+
+        <div class="card-content">
+            <h3>Wellness Teleconsult Promotional Video</h3>
+        </div>
+    </div>
+
+    <div class="cardd"
+        onclick="window.open('image/petrepublik.mp4', '_blank')">
+
+        <video
+            class="project-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto">
+
+            <source src="image/petrepublik.mp4" type="video/mp4">
+        </video>
+
+        <div class="card-content">
+            <h3>Pet Republik Promotional Video</h3>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!-- <div id="videoModal" class="video-modal">
+    <span class="close-modal">&times;</span>
+
+    <video id="modalVideo" controls autoplay>
+        Your browser does not support the video tag.
+    </video>
+</div> -->
+
+
 
 </section>
 
@@ -383,7 +538,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 </section>
 
 <!-- CONTACT -->
- <section id="Certificate">
+ <section id="certificate">
 
     <h2 class="section-title">Certificates</h2>
 
@@ -428,7 +583,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         <div class="card">
             <img src="image/certificate3.png" alt="Certificate">
             <div class="card-content">
-                <h3>Internship Department Certificate<</h3>
+                <h3>Internship Department Certificate</h3>
                 <p></p>
             </div>
         </div>
@@ -477,22 +632,22 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <div class="social-links">
 
-    <a href="https://facebook.com" target="_blank" class="social-btn">
+    <a href="https://www.facebook.com/jay.pasco.despo" target="_blank" class="social-btn">
         <i class="fab fa-facebook-f"></i>
         <span>Facebook</span>
     </a>
 
-    <a href="https://instagram.com" target="_blank" class="social-btn">
+    <a href="https://www.instagram.com/stfu.jyyyyyy/" target="_blank" class="social-btn">
         <i class="fab fa-instagram"></i>
         <span>Instagram</span>
     </a>
 
-    <a href="https://linkedin.com" target="_blank" class="social-btn">
+    <a href="https://www.linkedin.com/in/despo-jay-977203312/" target="_blank" class="social-btn">
         <i class="fab fa-linkedin-in"></i>
         <span>LinkedIn</span>
     </a>
 
-    <a href="https://github.com" target="_blank" class="social-btn">
+    <a href="https://github.com/jaydespo36-web" target="_blank" class="social-btn">
         <i class="fab fa-github"></i>
         <span>GitHub</span>
     </a>

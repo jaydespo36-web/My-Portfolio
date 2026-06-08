@@ -78,41 +78,70 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
-const text = "Bachelor of Science in Information Systems Student";
+// const text = "Bachelor of Science in Information Systems Student";
 
-const typingElement = document.getElementById("typing");
+// const typingElement = document.getElementById("typing");
 
-let index = 0;
-let deleting = false;
+// let index = 0;
+// let deleting = false;
 
-function typeEffect(){
+// function typeEffect(){
 
-    if(!deleting){
+//     if(!deleting){
 
-        typingElement.textContent =
-        text.substring(0, index++);
+//         typingElement.textContent 
+//         text.substring(0, index++);
 
-        if(index > text.length){
+//         if(index > text.length){
 
-            deleting = true;
+//             deleting = true;
 
-            setTimeout(typeEffect, 2000);
+//             setTimeout(typeEffect, 2000);
 
-            return;
-        }
+//             return;
+//         }
 
-    }else{
+//     }else{
 
-        typingElement.textContent =
-        text.substring(0, index--);
+//         typingElement.textContent =
+//         text.substring(0, index--);
 
-        if(index < 0){
+//         if(index < 0){
 
-            deleting = false;
-        }
-    }
+//             deleting = false;
+//         }
+//     }
 
-    setTimeout(typeEffect, deleting ? 40 : 90);
-}
+//     setTimeout(typeEffect, deleting ? 40 : 90);
+// }
 
 typeEffect();
+function openProject(url) {
+    window.open(url, "_blank");
+}
+
+
+const modal = document.getElementById("videoModal");
+const modalVideo = document.getElementById("modalVideo");
+const closeBtn = document.querySelector(".close-modal");
+
+function openVideo(src) {
+    modal.style.display = "flex";
+    modalVideo.src = src;
+    modalVideo.load();
+    modalVideo.play();
+}
+
+function closeVideo() {
+    modal.style.display = "none";
+    modalVideo.pause();
+    modalVideo.src = "";
+}
+
+closeBtn.addEventListener("click", closeVideo);
+
+modal.addEventListener("click", function(e) {
+    if (e.target === modal) {
+        closeVideo();
+    }
+});
