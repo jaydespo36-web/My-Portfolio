@@ -1888,3 +1888,24 @@ footer {
 .cardd {
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .stat-box {
+        width: 100%;
+        height: 75px;
+    }
+
+    .stat-box h3 {
+        font-size: 22px;
+    }
+
+    .stat-box p {
+        font-size: 11px;
+    }
+}
